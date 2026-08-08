@@ -30,4 +30,5 @@ app.get('/health', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5001;
+app.use('/api/auth', require('./routes/auth.routes'));
 app.listen(PORT, () => console.log(`🚀 Server on http://localhost:${PORT}`));
