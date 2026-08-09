@@ -1,0 +1,29 @@
+import axios from 'axios';
+
+const api = axios.create({ baseURL: 'http://localhost:5001/api' });
+
+// Attach JWT to EVERY request automatically
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
+
+// Auto-logout when the token is rejected
+api.interceptors.response.use(
+  (res) => res,
+  (err) => {
+    const url = err.config?.url || '';
+    const isAuthAttempt = url.includes('/auth/login') || url.includes('/auth/register');
+
+    if (err.response?.status === 401 && !isAuthAttempt) {
+      localStorage.removeItem('token');
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login';
+      }
+    }
+    return Promise.reject(err);
+  }
+);
+
+export default api;

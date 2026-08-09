@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 24px;
+  max-width: 780px;
+  margin-inline: auto;
+  background: #f7f8fa;
+  color: #222;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 8px 0;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { background: #1d4ed8; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+.error { color: #dc2626; }
+.muted { color: #6b7280; font-size: 13px; }
