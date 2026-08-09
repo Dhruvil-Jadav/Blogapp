@@ -1,0 +1,110 @@
+/* App.css - Modern Look */
+:root {
+  --primary: #6366f1; /* Modern Indigo */
+  --primary-hover: #4f46e5;
+  --bg-page: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --danger: #ef4444;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.container {
+  max-width: 600px; /* Kept narrow for focus */
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Card Styling - The "Modern" Look */
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+h2, h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+/* Forms */
+form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Buttons */
+button {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1rem;
+}
+
+button:hover { background: var(--primary-hover); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Utilities */
+.muted { color: var(--text-muted); font-size: 0.9rem; }
+.error { 
+  background: #fef2f2; 
+  color: #b91c1c; 
+  padding: 1rem; 
+  border-radius: 8px; 
+  border: 1px solid #fecaca;
+  margin-bottom: 1rem; 
+}
+.btn-delete { 
+  background: #fee2e2 !important; 
+  color: #b91c1c !important; 
+  margin-top: 1rem; 
+}
+.btn-delete:hover { background: #fecaca !important; }
+
+/* Stats Grid (Admin) */
+.stats-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem; 
+  margin-bottom: 2rem; 
+}
+
+.stat-value { 
+  font-size: 2rem; 
+  font-weight: 800; 
+  color: var(--primary);
+}
